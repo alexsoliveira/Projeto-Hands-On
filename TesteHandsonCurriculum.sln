@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{0ED626B1-7F91-4EAE-82BD-D5B8DF2357A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Services", "2-Services", "{29A1DE38-50F0-48F8-8427-DCDFBDB26E98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Application", "3-Application", "{7DE70E14-6E43-4DA9-9E91-36445EC7CBDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Domain", "4-Domain", "{0E8AA95F-F4E4-4E63-A20A-012C69F92D19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Infra", "5-Infra", "{14CA8C80-7167-4C1C-949D-7324CC466ABB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1-Data", "5.1-Data", "{89839CB3-A998-4628-8A59-BFDBA26BF812}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2-CrossCutting", "5.2-CrossCutting", "{5FBDE2A5-4ADE-4EF8-AB6F-66F5CD4352A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.Application", "src\TesteHandsonCurriculum.Application\TesteHandsonCurriculum.Application.csproj", "{F657EEAE-F5F2-4DEE-AE76-9163E690C010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.Domain", "src\TesteHandsonCurriculum.Domain\TesteHandsonCurriculum.Domain.csproj", "{9776DDFD-7FE8-4D49-BDAA-EC1A1ADFF29E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.Infra.Data", "src\TesteHandsonCurriculum.Infra.Data\TesteHandsonCurriculum.Infra.Data.csproj", "{2618AB40-AD75-48FB-92FD-9EC3F3327535}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.Infra.CC.IoC", "src\TesteHandsonCurriculum.Infra.CC.IoC\TesteHandsonCurriculum.Infra.CC.IoC.csproj", "{6CA6871B-4372-4B4F-B146-DFE3FCD66B00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.Infra.CC.MvcFilters", "src\TesteHandsonCurriculum.Infra.CC.MvcFilters\TesteHandsonCurriculum.Infra.CC.MvcFilters.csproj", "{981874F9-3C8B-4D6E-A5B4-BB87612658B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.UI.Web", "src\TesteHandsonCurriculum.UI.Web\TesteHandsonCurriculum.UI.Web.csproj", "{721B5209-17C8-4F6A-838C-58BD3274EE20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteHandsonCurriculum.Services.REST", "src\TesteHandsonCurriculum.Services.REST\TesteHandsonCurriculum.Services.REST.csproj", "{8A10DA5F-3FB9-4419-A9AB-F601C15DDDD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F657EEAE-F5F2-4DEE-AE76-9163E690C010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F657EEAE-F5F2-4DEE-AE76-9163E690C010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F657EEAE-F5F2-4DEE-AE76-9163E690C010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F657EEAE-F5F2-4DEE-AE76-9163E690C010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9776DDFD-7FE8-4D49-BDAA-EC1A1ADFF29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9776DDFD-7FE8-4D49-BDAA-EC1A1ADFF29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9776DDFD-7FE8-4D49-BDAA-EC1A1ADFF29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9776DDFD-7FE8-4D49-BDAA-EC1A1ADFF29E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2618AB40-AD75-48FB-92FD-9EC3F3327535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2618AB40-AD75-48FB-92FD-9EC3F3327535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2618AB40-AD75-48FB-92FD-9EC3F3327535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2618AB40-AD75-48FB-92FD-9EC3F3327535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA6871B-4372-4B4F-B146-DFE3FCD66B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA6871B-4372-4B4F-B146-DFE3FCD66B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA6871B-4372-4B4F-B146-DFE3FCD66B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA6871B-4372-4B4F-B146-DFE3FCD66B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{981874F9-3C8B-4D6E-A5B4-BB87612658B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981874F9-3C8B-4D6E-A5B4-BB87612658B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981874F9-3C8B-4D6E-A5B4-BB87612658B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981874F9-3C8B-4D6E-A5B4-BB87612658B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721B5209-17C8-4F6A-838C-58BD3274EE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721B5209-17C8-4F6A-838C-58BD3274EE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721B5209-17C8-4F6A-838C-58BD3274EE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721B5209-17C8-4F6A-838C-58BD3274EE20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A10DA5F-3FB9-4419-A9AB-F601C15DDDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A10DA5F-3FB9-4419-A9AB-F601C15DDDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A10DA5F-3FB9-4419-A9AB-F601C15DDDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A10DA5F-3FB9-4419-A9AB-F601C15DDDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89839CB3-A998-4628-8A59-BFDBA26BF812} = {14CA8C80-7167-4C1C-949D-7324CC466ABB}
+		{5FBDE2A5-4ADE-4EF8-AB6F-66F5CD4352A0} = {14CA8C80-7167-4C1C-949D-7324CC466ABB}
+		{F657EEAE-F5F2-4DEE-AE76-9163E690C010} = {7DE70E14-6E43-4DA9-9E91-36445EC7CBDB}
+		{9776DDFD-7FE8-4D49-BDAA-EC1A1ADFF29E} = {0E8AA95F-F4E4-4E63-A20A-012C69F92D19}
+		{2618AB40-AD75-48FB-92FD-9EC3F3327535} = {89839CB3-A998-4628-8A59-BFDBA26BF812}
+		{6CA6871B-4372-4B4F-B146-DFE3FCD66B00} = {5FBDE2A5-4ADE-4EF8-AB6F-66F5CD4352A0}
+		{981874F9-3C8B-4D6E-A5B4-BB87612658B6} = {5FBDE2A5-4ADE-4EF8-AB6F-66F5CD4352A0}
+		{721B5209-17C8-4F6A-838C-58BD3274EE20} = {0ED626B1-7F91-4EAE-82BD-D5B8DF2357A1}
+		{8A10DA5F-3FB9-4419-A9AB-F601C15DDDD8} = {29A1DE38-50F0-48F8-8427-DCDFBDB26E98}
+	EndGlobalSection
+EndGlobal

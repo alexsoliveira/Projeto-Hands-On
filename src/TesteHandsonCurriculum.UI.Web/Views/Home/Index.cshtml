@@ -1,0 +1,164 @@
+﻿@using TesteHandsonCurriculum.Application.ViewModels
+@model SuspeitoLocalArmaViewModel
+
+@{
+    ViewBag.Title = "Projeto Curriculum";
+    TempData.Keep("Aleatorio");
+}
+
+<br /><br />
+<div class="container text-projet">
+    <h2 class="text-center">Forneça uma teoria para testemunha para ajuda-mos o Inspetor Jacques Clouseau com o caso:</h2>
+
+
+    <br /><br />
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <div class="dropdown">
+                @Html.DropDownListFor(model => model.SuspeitoCod, new SelectList(@ViewBag.Suspeito, "SuspeitoCod", "SuspeitoNome"), new { @id = "Suspeito", @class = "form-control input-lg" })
+            </div>
+        </div>
+
+        <div class="col-xs-4"></div>
+    </div>
+
+    <br /><br />
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <div class="dropdown">
+                @Html.DropDownListFor(model => model.LocalCod, new SelectList(String.Empty, "LocalCod", "LocalNome"), "Escolhe o local do crime...", new { @id = "Local", @class = "form-control input-lg", disabled = "disabled" })
+            </div>
+        </div>
+
+        <div class="col-xs-4"></div>
+    </div>
+
+    <br /><br />
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <div class="dropdown text-center">
+                @Html.DropDownListFor(model => model.ArmaCod, new SelectList(String.Empty, "ArmaCod", "ArmaNome"), "Escolhe a arma do crime...", new { @id = "Arma", @class = "form-control input-lg", disabled = "disabled" })
+            </div>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+
+    <br /><br />
+
+    <div class="row">
+        <div class="text-center">
+            <button id="ValidarTeoria" class="btn btn-large btn-primary" type="submit" disabled="disabled">Validar</button>            
+        </div>
+    </div>
+</div>
+
+<div id="modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">New message</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#Suspeito").change(function () {
+            $("#Local").empty();
+            if ($("#Suspeito").val() === "0") {
+                $("#Local").prop("disabled", true);
+                $("#Arma").prop("disabled", true);
+                $("#ValidarTeoria").prop("disabled", true);
+            } else {
+                $("#Local").prop("disabled", false);
+                $("#Arma").prop("disabled", true);
+            }
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("ObterLocais")',
+                dataType: 'json',
+                data: { id: $("#Suspeito").val() },
+                success: function (locais) {
+                    $.each(locais, function (i, local) {
+                        $("#Local").append('<option value="' + local.Value + '">' +
+                            local.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Falha a recuperar locais do crime.' + ex);
+                }
+            });
+            return false;
+        });
+
+        $("#Local").change(function () {
+            $("#Arma").empty();
+            if ($("#Local").val() === "0") {
+                $("#Arma").prop("disabled", true);
+                $("#ValidarTeoria").prop("disabled", true);
+            } else {
+                $("#Arma").prop("disabled", false);
+            }
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("ObterArmas")',
+                dataType: 'json',
+                data: { id: $("#Local").val() },
+                success: function (armas) {
+                    $.each(armas, function (i, arma) {
+                        $("#Arma").append('<option value="' + arma.Value + '">' +
+                            arma.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Falha a recuperar armas do crime.' + ex);
+                }
+            });
+            return false;
+        });
+
+        $("#Arma").change(function () {
+            if ($(this).val() === "0") {
+                $("#ValidarTeoria").prop("disabled", true);
+            } else {
+                $("#ValidarTeoria").prop("disabled", false);
+            }
+        });        
+
+        $("#ValidarTeoria").click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RetornarValidacao")',
+                dataType: 'json',
+                data: { idSuspeito: $("#Suspeito").val(), idLocal: $("#Local").val(), idArma: $("#Arma").val() },
+                success: function (message) {                    
+                    $("#modal").modal("show").on('shown.bs.modal', function () {
+                        var modal = $(this);
+                        modal.find('.modal-title').text(message.TituloMessage);
+                        modal.find('.modal-body p').text(message.CorpoMessage);                        
+                    });
+                },
+                error: function (ex) {
+                    alert(ex);
+                }
+            });
+            return false;
+        });        
+    });
+</script>
