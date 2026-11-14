@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using AutoMapper;
+using System.Collections.Generic;
 using TesteHandsonCurriculum.Application.Interfaces;
+using TesteHandsonCurriculum.Application.Mappers;
 using TesteHandsonCurriculum.Application.ViewModels;
 using TesteHandsonCurriculum.Domain.Interfaces.Services;
 
@@ -15,11 +15,11 @@ namespace TesteHandsonCurriculum.Application.Apps
         }
         public LocalViewModel ObterPorId(int id)
         {
-            return Mapper.Map<LocalViewModel>(_localService.ObterPorId(id));
+            return _localService.ObterPorId(id).ToViewModel();
         }
         public IEnumerable<LocalViewModel> ObterTodos()
         {
-            return Mapper.Map<IEnumerable<LocalViewModel>>(_localService.ObterTodos());
+            return _localService.ObterTodos().ToViewModel();
         }
     }
 }

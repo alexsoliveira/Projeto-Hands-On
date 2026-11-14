@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using AutoMapper;
+using System.Collections.Generic;
 using TesteHandsonCurriculum.Application.Interfaces;
+using TesteHandsonCurriculum.Application.Mappers;
 using TesteHandsonCurriculum.Application.ViewModels;
 using TesteHandsonCurriculum.Domain.Interfaces.Services;
 
@@ -15,11 +15,11 @@ namespace TesteHandsonCurriculum.Application.Apps
         }
         public ArmaViewModel ObterPorId(int id)
         {
-            return Mapper.Map<ArmaViewModel>(_armaService.ObterPorId(id));
+            return _armaService.ObterPorId(id).ToViewModel();
         }
         public IEnumerable<ArmaViewModel> ObterTodos()
         {
-            return Mapper.Map<IEnumerable<ArmaViewModel>>(_armaService.ObterTodos());
+            return _armaService.ObterTodos().ToViewModel();
         }
     }
 }
