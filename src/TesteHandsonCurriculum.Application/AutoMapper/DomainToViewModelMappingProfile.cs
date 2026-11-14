@@ -1,4 +1,4 @@
-﻿using TesteHandsonCurriculum.Application.ViewModels;
+using TesteHandsonCurriculum.Application.ViewModels;
 using TesteHandsonCurriculum.Domain.Entity;
 using AutoMapper;
 
@@ -8,9 +8,9 @@ namespace TesteHandsonCurriculum.Application.AutoMapper
     {
         protected override void Configure()
         {
-            CreateMap<Suspeito, SuspeitoViewModel>();
-            CreateMap<Local, LocalViewModel>();
-            CreateMap<Arma, ArmaViewModel>();            
+            CreateMap<Suspeito, SuspeitoViewModel>().MaxDepth(32);
+            CreateMap<Local, LocalViewModel>().MaxDepth(32);
+            CreateMap<Arma, ArmaViewModel>().MaxDepth(32);            
         }
     }
 }
