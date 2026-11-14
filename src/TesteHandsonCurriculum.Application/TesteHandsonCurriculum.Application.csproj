@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
       <Private>True</Private>
@@ -52,9 +48,7 @@
     <Compile Include="Apps\ArmaAppService.cs" />
     <Compile Include="Apps\LocalAppService.cs" />
     <Compile Include="Apps\SuspeitoAppService.cs" />
-    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
-    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
-    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Mappers\EntityMapperExtensions.cs" />
     <Compile Include="Interfaces\IArmaAppService.cs" />
     <Compile Include="Interfaces\ILocalAppService.cs" />
     <Compile Include="Interfaces\ISuspeitoAppService.cs" />
